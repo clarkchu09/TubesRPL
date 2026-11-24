@@ -1,12 +1,13 @@
 // =====================================================================
-// HELPER BERSAMA untuk semua halaman (dipakai Jamie, Roy, Clark, Alfon)
-// Pemilik: Bryan. Isi diambil dari pages.js asli (baris 12-41 + lecturerHeader).
-// Mengekspor: ctx, esc, pad2, option, isEn, languageToggle, navButton, lecturerHeader
+// FILE PENDUKUNG (hanya untuk tes lokal Clark).
+// Isi file ini DIAMBIL dari pages.js asli: helper bersama + header dosen.
+// Kalau Bryan/Roy sudah push js/pages/shared.js, JANGAN push file ini;
+// cukup pastikan versi mereka mengekspor: ctx, esc, option, isEn, lecturerHeader.
 // =====================================================================
 import { state } from "../data.js";
 
 export const ctx = {
-  local: {}, // di-reset setiap pindah halaman
+  local: {},
   rerender() {},
   navigate() {},
   refreshPartial() {},
