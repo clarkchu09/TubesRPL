@@ -1,0 +1,156 @@
+/* =====================================================================
+   Gaya header/nav yang dipakai SEMUA role (mahasiswa, dosen, admin). Pemilik: Bryan.
+   Diambil dari style.css baris 357-427 + aturan responsifnya.
+   ===================================================================== */
+
+.dashboard-page {
+  min-height: 100dvh;
+  background: #f8f9ff;
+  color: #0b1c30;
+}
+
+.dashboard-header {
+  position: sticky;
+  z-index: 10;
+  top: 0;
+  display: flex;
+  height: 94px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: #414751;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 50px;
+  font-variation-settings:
+    "YTLC" 500,
+    "wdth" 100;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.brand img {
+  width: 61px;
+  height: 61px;
+}
+
+.brand-button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dashboard-header nav {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-link {
+  min-height: 56px;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  background: #eff4ff;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+  color: #6b7280;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: left;
+}
+
+.nav-link--active {
+  background: #0d6e6e;
+  color: #fff;
+}
+
+@media (max-width: 860px) {
+  .dashboard-header {
+    position: relative;
+    height: auto;
+    align-items: flex-start;
+    gap: 24px;
+    padding: 18px 20px;
+  }
+
+  .brand {
+    gap: 10px;
+    font-size: 32px;
+  }
+
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .dashboard-header nav {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .dashboard-header .language-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+    padding: 5px 9px;
+    font-size: 11px;
+    line-height: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-header {
+    height: 94px;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    overflow: hidden;
+    padding: 12px 14px;
+  }
+
+  .dashboard-header nav {
+    width: auto;
+    min-width: 0;
+    flex: 1;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .dashboard-header nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .dashboard-header .brand {
+    flex: 0 0 auto;
+  }
+
+  .dashboard-header .brand span {
+    display: none;
+  }
+
+  .dashboard-header .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .dashboard-header .nav-link {
+    flex: 0 0 auto;
+  }
+}

@@ -1,0 +1,402 @@
+/* Reset dasar (pengganti Preflight Tailwind yang sebelumnya dipakai) */
+*, ::before, ::after { box-sizing: border-box; margin: 0; padding: 0; border: 0 solid; }
+html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: "Inter", ui-sans-serif, system-ui, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-size: inherit; font-weight: inherit; }
+a { color: inherit; text-decoration: inherit; }
+img, svg, video { display: block; max-width: 100%; height: auto; vertical-align: middle; }
+ol, ul, menu { list-style: none; }
+table { border-collapse: collapse; }
+button, input, select, optgroup, textarea {
+  font: inherit; letter-spacing: inherit; color: inherit; border-radius: 0; background-color: transparent; opacity: 1;
+}
+button, [type="button"], [type="submit"] { cursor: pointer; }
+:disabled { cursor: not-allowed; }
+[hidden] { display: none !important; }
+
+
+:root {
+  color: #414751;
+  background: #f8f9ff;
+  font-synthesis: none;
+  text-rendering: geometricPrecision;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100dvh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.language-root {
+  min-height: 100dvh;
+}
+
+.login-page {
+  position: relative;
+  display: flex;
+  min-height: 100dvh;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 40px 24px;
+  background: #f8f9ff;
+}
+
+.ambient-glow {
+  position: absolute;
+  width: 384px;
+  height: 384px;
+  border-radius: 9999px;
+  filter: blur(32px);
+  pointer-events: none;
+}
+
+.ambient-glow--top {
+  top: -148px;
+  left: -192px;
+  background: rgb(132 212 211 / 20%);
+}
+
+.ambient-glow--bottom {
+  right: -192px;
+  bottom: -192px;
+  background: rgb(109 245 225 / 30%);
+}
+
+.language-icon {
+  display: block;
+  width: 38px;
+  height: 38px;
+  flex: 0 0 auto;
+}
+
+.language-toggle {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 2px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #0d6e6e;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.language-toggle--login {
+  position: absolute;
+  top: 25px;
+  right: 23px;
+  z-index: 2;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: min(614px, 100%);
+  min-height: 761px;
+  padding: 68px 28px 44px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 25%);
+}
+
+.login-header {
+  text-align: center;
+}
+
+.login-header h1 {
+  color: #414751;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 40px;
+  font-variation-settings:
+    "YTLC" 500,
+    "wdth" 100;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.login-header p {
+  margin-top: 13px;
+  color: #6e7979;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.login-form {
+  display: flex;
+  min-height: 601px;
+  flex-direction: column;
+}
+
+.role-picker {
+  margin-top: 18px;
+}
+
+.role-picker legend {
+  margin-bottom: 14px;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-variation-settings:
+    "YTLC" 500,
+    "wdth" 100;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.role-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 33px;
+}
+
+.role-option {
+  display: flex;
+  height: 45px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 17px;
+  border: 1px solid #7b7b7b;
+  border-radius: 5px;
+  padding: 0 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+  color: #6b7280;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-variation-settings:
+    "YTLC" 500,
+    "wdth" 100;
+  font-weight: 600;
+  line-height: 18px;
+  transition:
+    color 150ms ease,
+    background 150ms ease,
+    border-color 150ms ease,
+    transform 150ms ease;
+}
+
+.role-option:first-child {
+  gap: 16px;
+  font-family: "Nunito", sans-serif; font-weight: 600;
+}
+
+.role-option:hover {
+  transform: translateY(-1px);
+}
+
+.role-option:focus-visible,
+.submit-button:focus-visible,
+.input-shell:focus-within {
+  outline: 3px solid rgb(13 110 110 / 24%);
+  outline-offset: 2px;
+}
+
+.role-option--active {
+  border-color: #0e6f6f;
+  background: #0e6f6f;
+  color: #fff;
+}
+
+.role-icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.role-icon--student {
+  width: 30px;
+  height: 30px;
+  margin-left: 0;
+}
+
+.role-icon--lecturer {
+  width: 26px;
+  height: 21px;
+  margin-left: 5px;
+}
+
+.role-icon--admin {
+  width: 23px;
+  height: 23px;
+  margin-left: 5px;
+}
+
+.role-option--active .role-icon {
+  filter: brightness(0) invert(1);
+}
+
+.credentials {
+  display: grid;
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  color: #414751;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 14px;
+  font-variation-settings:
+    "YTLC" 500,
+    "wdth" 100;
+  font-weight: 700;
+  letter-spacing: 0.28px;
+  line-height: 20px;
+}
+
+.input-shell {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  gap: 14px;
+  border: 1px solid #c1c7d3;
+  border-radius: 9999px;
+  padding: 0 17px 0 19px;
+  background: #f7f9fb;
+}
+
+.input-shell img {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.field:first-child .input-shell img {
+  width: 20px;
+  height: 16px;
+}
+
+.field:last-child .input-shell img {
+  width: 16px;
+  height: 21px;
+}
+
+.input-shell input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #414751;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 16px;
+  font-variation-settings:
+    "YTLC" 500,
+    "wdth" 100;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.input-shell input::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+.form-footer {
+  margin-top: auto;
+  padding: 0 12px;
+}
+
+.form-message {
+  min-height: 20px;
+  margin-bottom: 6px;
+  color: #0d6e6e;
+  font-family: "Nunito Sans", sans-serif; font-weight: 400;
+  font-size: 13px;
+  text-align: center;
+}
+
+.submit-button {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 20px;
+  background: #0d6e6e;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 10%),
+    0 2px 4px -2px rgb(0 0 0 / 10%);
+  color: #fff;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-variation-settings:
+    "YTLC" 500,
+    "wdth" 100;
+  font-weight: 600;
+  line-height: 28px;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.submit-button:hover {
+  background: #0a5e5e;
+  transform: translateY(-1px);
+}
+
+.submit-button img {
+  width: 13.333px;
+  height: 13.333px;
+}
+
+@media (max-width: 640px) {
+  .login-page {
+    align-items: flex-start;
+    padding: 20px 14px;
+  }
+
+  .login-card {
+    min-height: calc(100dvh - 40px);
+    padding: 50px 20px 28px;
+  }
+
+  .login-header h1 {
+    font-size: clamp(28px, 9vw, 40px);
+  }
+
+  .login-form {
+    min-height: calc(100dvh - 178px);
+  }
+
+  .role-options {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .role-option {
+    justify-content: center;
+  }
+
+  .credentials {
+    margin-top: 34px;
+  }
+
+  .form-footer {
+    padding: 34px 0 0;
+  }
+
+  .language-toggle--login {
+    top: 12px;
+    right: 12px;
+  }
+
+  .language-toggle--login .language-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
