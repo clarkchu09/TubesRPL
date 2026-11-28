@@ -1,0 +1,472 @@
+.lecturer-header nav {
+  gap: 14px;
+}
+
+.mobile-lecturer-nav {
+  display: none;
+}
+
+.lecturer-header .nav-link {
+  max-width: 168px;
+}
+
+.lecturer-content {
+  padding: 15px 31px 52px;
+}
+
+.lecturer-avatar {
+  background: #699dff;
+}
+
+.lecturer-profile h1 {
+  font-family: "Inter", sans-serif; font-weight: 600;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.lecturer-section-title {
+  margin-top: 24px;
+  color: #6b7280;
+  font-family: "Lexend", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.lecturer-table {
+  min-height: 495px;
+  margin-top: 18px;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
+  background: #e5eeff;
+}
+
+.lecturer-table-head,
+.lecturer-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  text-align: center;
+}
+
+.lecturer-table-head {
+  min-height: 55px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
+.lecturer-row {
+  min-height: 56px;
+  border-bottom: 1px solid #dce9ff;
+  background: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.lecturer-row > span {
+  max-width: 310px;
+  justify-self: center;
+}
+
+.lecturer-row > span:last-child {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.lecturer-row strong {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.lecturer-row small {
+  color: #3e4948;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.pagination-summary {
+  color: #3e4948;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.pagination-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pagination button {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: #fff;
+  color: #0b1c30;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.pagination button:first-child,
+.pagination button:last-child {
+  background: #eff4ff;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.pagination .pagination-active {
+  background: #0d6e6e;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.pagination img {
+  width: auto;
+  height: 8px;
+}
+
+.pagination span {
+  padding: 0 4px;
+  color: #3e4948;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  font-size: 14px;
+}
+
+.pagination-summary strong {
+  color: #0b1c30;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+}
+
+.manage-content {
+  padding: 17px 40px 24px;
+}
+
+.manage-topline {
+  display: flex;
+  min-height: 122px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.manage-topline h1 {
+  color: #414751;
+  font-family: "Lexend", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.manage-course-filter {
+  width: 334px;
+}
+
+.manage-course-filter select {
+  background-image: url("/assets/features/manage_groups/0cc30.svg");
+}
+
+.manage-table-head,
+.managed-group {
+  display: grid;
+  grid-template-columns: 250px minmax(360px, 1fr) 260px 210px;
+}
+
+.manage-table-head {
+  min-height: 32px;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+  padding: 0 28px;
+  background: #e5eeff;
+  color: #3e4948;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.managed-groups {
+  display: grid;
+  gap: 15px;
+  margin-top: 12px;
+}
+
+.managed-group {
+  min-height: 164px;
+  align-items: center;
+  padding: 18px 24px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+}
+
+.managed-group-name {
+  align-self: start;
+  padding: 12px 0 0 88px;
+}
+
+.managed-group-name strong {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.managed-group-name i {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #005454;
+}
+
+.managed-group-name span {
+  display: block;
+  width: fit-content;
+  margin-top: 3px;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  background: #e5eeff;
+  color: #006b5f;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.managed-members {
+  display: grid;
+  gap: 6px;
+}
+
+.managed-members > div {
+  display: grid;
+  min-height: 26px;
+  grid-template-columns: 10px 1fr 24px;
+  align-items: center;
+  gap: 4px;
+  border-radius: 6px;
+  padding: 4px 4px 4px 8px;
+  background: #eff4ff;
+  color: #0b1c30;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+.managed-members > div > img {
+  width: 9.333px;
+  height: 9.333px;
+}
+
+.managed-members button {
+  display: grid;
+  place-items: center;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.managed-members button img {
+  width: 8.167px;
+  height: 8.167px;
+}
+
+.managed-members select,
+.quota-control select {
+  min-height: 26px;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 30px 4px 8px;
+  outline: 0;
+  appearance: none;
+  background: #eff4ff url("/assets/features/manage_groups/bc2c9.svg") no-repeat right 10px center;
+  color: #0b1c30;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.quota-control {
+  align-self: start;
+  padding: 24px 28px;
+}
+
+.quota-control select {
+  width: 229px;
+  min-height: 48px;
+  padding-left: 16px;
+  border: 8px solid #e5eeff;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.managed-save {
+  width: 210px;
+  min-height: 37px;
+  align-self: end;
+  border: 0;
+  border-radius: 8px;
+  background: #0d6e6e;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.add-group-slot {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 4px;
+  margin-top: 30px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 55px;
+  background: #0d6e6e;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.add-group-slot img {
+  width: 15px;
+  height: 15px;
+}
+
+@media (max-width: 860px) {
+  .lecturer-table {
+    overflow-x: auto;
+  }
+
+  .lecturer-table-head,
+  .lecturer-row {
+    width: 900px;
+  }
+
+  .manage-table-head,
+  .managed-group {
+    grid-template-columns: 190px minmax(300px, 1fr) 220px 180px;
+    width: 980px;
+  }
+
+  .manage-content {
+    overflow-x: auto;
+    padding: 20px 16px 40px;
+  }
+
+  .manage-topline {
+    width: calc(100vw - 32px);
+  }
+
+  .managed-group-name {
+    padding-left: 22px;
+  }
+
+  .managed-save {
+    width: 160px;
+  }
+}
+
+@media (max-width: 640px) {
+  .manage-topline h1 {
+    font-size: 40px;
+  }
+
+  .lecturer-header nav {
+    align-items: center;
+    overflow: visible;
+  }
+
+  .lecturer-header .nav-link {
+    display: none;
+  }
+
+  .mobile-lecturer-nav {
+    display: block;
+    min-width: 0;
+    flex: 1;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 30px 10px 12px;
+    appearance: none;
+    background: #eff4ff url("/assets/features/manage_groups/bc2c9.svg") no-repeat right 10px center;
+    color: #005454;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .lecturer-content {
+    padding: 20px 16px 40px;
+  }
+
+  .manage-topline {
+    min-height: 150px;
+    align-items: stretch;
+    flex-direction: column;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  .manage-course-filter {
+    width: 100%;
+  }
+
+  .manage-table-head {
+    display: none;
+  }
+
+  .managed-group {
+    width: calc(100vw - 32px);
+    grid-template-columns: 1fr;
+    gap: 18px;
+    border-radius: 12px;
+    padding: 18px;
+  }
+
+  .managed-group-name,
+  .quota-control {
+    padding: 0;
+  }
+
+  .quota-control select,
+  .managed-save {
+    width: 100%;
+  }
+
+  .add-group-slot {
+    width: calc(100vw - 32px);
+    justify-content: center;
+    padding: 0 16px;
+  }
+}
