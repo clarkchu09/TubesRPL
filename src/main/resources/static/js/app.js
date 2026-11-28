@@ -10,19 +10,31 @@ import { translateVisibleDocument } from "./i18n.js";
 import { ctx } from "./pages/shared.js";
 import { loginPage } from "./pages/login.js";
 import { clickActions as bahasaClick } from "./actions/bahasa.js";
+import { routes as mahasiswaRoutes } from "./pages/mahasiswa.js";
+import { routes as dosenJadwalRoutes } from "./pages/dosen-jadwal.js";
+import { clickActions as mahasiswaClick, changeHandlers as mahasiswaChange } from "./actions/mahasiswa.js";
+import { routes as dosenKelompokRoutes } from "./pages/dosen-kelompok.js";
+import { clickActions as dosenKelompokClick, changeHandlers as dosenKelompokChange } from "./actions/dosen-kelompok.js";
+
+import {
+  clickActions as dosenJadwalClick,
+  changeHandlers as dosenJadwalChange,
+  updateScheduleField,
+} from "./actions/dosen-jadwal.js";
+
 
 // Tabel route: alamat URL -> fungsi yang menghasilkan HTML halaman.
 // Sementara KOSONG, jadi semua alamat menampilkan halaman login.
 // [TAHAP AKHIR] diganti dengan:  import { routes } from "./routes.js";
-const routes = {};
+const routes = { ...mahasiswaRoutes, ...dosenJadwalRoutes, ...dosenKelompokRoutes };
 
 // Kumpulan aksi untuk elemen ber-atribut data-action="..."
 // [TAHAP AKHIR] ditambah aksi dari modul Jamie, Roy, Clark, dan Alfon.
-const actions = { ...bahasaClick };
+const actions = { ...bahasaClick, ...mahasiswaClick, ...dosenJadwalClick, ...dosenKelompokClick };
 
 // Kumpulan handler untuk elemen ber-atribut data-change="..."
 // [TAHAP AKHIR] diisi handler dari modul lain.
-const changeHandlers = {};
+const changeHandlers = { ...mahasiswaChange, ...dosenJadwalChange, ...dosenKelompokChange };
 
 const app = document.getElementById("app");
 
@@ -67,6 +79,14 @@ document.addEventListener("change", (event) => {
   const handler = changeHandlers[el.dataset?.change];
   if (handler) handler(el);
 });
+
+// ---------- input form penjadwalan (elemen ber-atribut data-field) ----------
+for (const type of ["input", "change"]) {
+  document.addEventListener(type, (event) => {
+    const el = event.target;
+    if (el.dataset?.field) updateScheduleField(el);
+  });
+}
 
 // ---------- submit login ----------
 document.addEventListener("submit", (event) => {

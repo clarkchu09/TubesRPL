@@ -1,0 +1,535 @@
+/* =====================================================================
+   CSS: Matriks Ketersediaan Waktu + Buat Jadwal (dosen)
+   Pemilik: Clark. Dimuat SETELAH style.css (lihat PANDUAN_CLARK.md)
+   ===================================================================== */
+
+.create-schedule-content > h1 {
+  color: #414751;
+  font-family: "Lexend", sans-serif;
+  font-size: 60px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.matrix-content {
+  padding: 49px 24px 48px;
+}
+
+.matrix-intro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.matrix-intro h1 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+}
+
+.matrix-intro h1 img {
+  width: 18px;
+  height: 18px;
+}
+
+.matrix-intro p {
+  margin-top: 2px;
+  color: #3e4948;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.matrix-intro label {
+  display: flex;
+  width: 490px;
+  align-items: center;
+  gap: 8px;
+  border-radius: 8px;
+  padding: 6px 16px;
+  background: #eff4ff;
+  color: #3e4948;
+  font-family: "Inter", sans-serif; font-weight: 500;
+  font-size: 11px;
+}
+
+.matrix-intro select {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 30px 4px 12px;
+  appearance: none;
+  background: #fff url("/assets/features/matrix/3a79e.svg") no-repeat right 8px center;
+  color: #005454;
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.matrix-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: rgb(239 244 255 / 70%);
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.matrix-legend strong {
+  color: #6e7979;
+}
+
+.matrix-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.matrix-legend span::before {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  content: "";
+}
+
+.legend-student::before {
+  background: #ef4444;
+}
+
+.legend-exam::before {
+  background: #f59e0b;
+}
+
+.legend-teach::before {
+  background: #8b5cf6;
+}
+
+.matrix-scroll {
+  overflow-x: auto;
+  margin-top: 46px;
+  border-radius: 8px;
+}
+
+.availability-matrix {
+  display: grid;
+  min-width: 1080px;
+  grid-template-columns: 220px repeat(5, minmax(170px, 1fr));
+  background: #fff;
+}
+
+.matrix-corner,
+.matrix-day {
+  min-height: 58px;
+  padding: 10px 8px;
+  background: #eff4ff;
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.matrix-corner {
+  display: grid;
+  place-items: center;
+}
+
+.matrix-day {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.matrix-day small {
+  color: #3e4948;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.matrix-day--focus {
+  background: rgb(220 233 255 / 60%);
+  color: #005454;
+}
+
+.matrix-row {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: subgrid;
+}
+
+.matrix-time {
+  padding: 11px 12px;
+  background: rgb(239 244 255 / 40%);
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.matrix-cell {
+  min-height: 38px;
+  margin: 3px 2px;
+  border-radius: 4px;
+  padding: 8px;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.matrix-cell--student {
+  background: #ef4444;
+}
+
+.matrix-cell--exam,
+.matrix-cell--guard {
+  background: #f59e0b;
+}
+
+.matrix-cell--teach {
+  background: #8b5cf6;
+}
+
+.create-schedule-content {
+  position: relative;
+  min-height: calc(100dvh - 94px);
+  padding: 36px 40px 50px;
+  background: #fff;
+}
+
+.schedule-builder {
+  display: grid;
+  grid-template-columns: 415px minmax(500px, 828px);
+  gap: 100px;
+  margin-top: 18px;
+}
+
+.schedule-form {
+  display: grid;
+  gap: 30px;
+}
+
+.schedule-field,
+.time-fields {
+  border-radius: 12px;
+  padding: 16px;
+  background: #eff4ff;
+  color: #191c1e;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.schedule-field {
+  display: grid;
+  gap: 10px;
+}
+
+.schedule-field > div {
+  position: relative;
+  width: 285px;
+}
+
+.schedule-field > div img {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.schedule-field input,
+.schedule-field select {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 40px 8px 16px;
+  outline: 0;
+  appearance: none;
+  background: #fff url("/assets/features/create_schedule/df3f0.svg") no-repeat right 14px center;
+  color: #0b1c30;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  font-size: 14px;
+}
+
+.schedule-field input[type="date"] {
+  background-image: none;
+}
+
+.schedule-field input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+.time-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 54px;
+}
+
+.time-fields label {
+  display: grid;
+}
+
+.time-fields label > div {
+  position: relative;
+  margin-top: 4px;
+}
+
+.time-fields img {
+  position: absolute;
+  z-index: 1;
+  top: 13px;
+  left: 12px;
+  width: 16.667px;
+  height: 16.667px;
+}
+
+.time-fields input {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px 8px 8px 38px;
+  outline: 0;
+  background: #fff;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+  font-family: "Nunito Sans", sans-serif; font-weight: 400;
+  font-size: 16px;
+}
+
+.schedule-summary {
+  height: 398px;
+  overflow: hidden;
+  border: 1px solid #e4eaf2;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.schedule-summary h2 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.summary-time {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  border-radius: 8px;
+  padding: 18px;
+  background: #eff4ff;
+}
+
+.summary-time > div {
+  display: flex;
+  width: 64px;
+  height: 70px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: #fff;
+  color: #005454;
+}
+
+.summary-time > div small {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.summary-time > div strong {
+  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700;
+  font-size: 28px;
+  line-height: 34px;
+}
+
+.summary-time > span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #3e4948;
+  font-family: "Inter", sans-serif; font-weight: 500;
+  font-size: 13px;
+}
+
+.summary-time > span strong {
+  color: #005454;
+  font-family: "Plus Jakarta Sans", sans-serif; font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.schedule-summary dl {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  margin-top: 28px;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.schedule-summary dt {
+  color: #6b7280;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  text-align: right;
+}
+
+.schedule-summary dd {
+  margin-left: 45px;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+}
+
+.schedule-summary > p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 20px;
+  border-top: 1px solid #e4eaf2;
+  padding-top: 10px;
+  color: #6b7280;
+  font-family: "Inter", sans-serif; font-weight: 400;
+  font-size: 12px;
+}
+
+.schedule-summary > p img {
+  width: 14px;
+  height: 14px;
+}
+
+.create-schedule-button {
+  display: flex;
+  width: 290px;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 84px 0 0 auto;
+  border: 0;
+  border-radius: 12px;
+  background: #0d6e6e;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.create-schedule-button img {
+  width: 11px;
+  height: 11px;
+}
+
+@media (max-width: 860px) {
+  .schedule-builder {
+    grid-template-columns: 360px minmax(450px, 1fr);
+    gap: 32px;
+  }
+
+  .create-schedule-content {
+    overflow-x: auto;
+    padding: 30px 20px 48px;
+  }
+
+  .matrix-content {
+    padding: 30px 16px 40px;
+  }
+
+  .matrix-intro {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .matrix-intro label {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .create-schedule-content > h1 {
+    font-size: 40px;
+  }
+
+  .matrix-intro h1 {
+    align-items: flex-start;
+    font-size: 16px;
+  }
+
+  .matrix-intro label {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .matrix-legend {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .matrix-scroll {
+    margin-top: 24px;
+  }
+
+  .schedule-builder {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .create-schedule-content {
+    overflow: visible;
+    padding: 28px 16px 40px;
+  }
+
+  .schedule-form {
+    gap: 18px;
+  }
+
+  .schedule-field > div {
+    width: 100%;
+  }
+
+  .time-fields {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .schedule-summary {
+    height: auto;
+    min-height: 420px;
+    padding: 16px;
+  }
+
+  .summary-time > span strong {
+    font-size: 18px;
+  }
+
+  .schedule-summary dl {
+    grid-template-columns: 115px 1fr;
+    font-size: 14px;
+  }
+
+  .schedule-summary dd {
+    margin-left: 18px;
+  }
+
+  .create-schedule-button {
+    width: 100%;
+    margin-top: 24px;
+  }
+}

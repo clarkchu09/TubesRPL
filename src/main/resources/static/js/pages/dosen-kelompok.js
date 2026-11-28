@@ -18,7 +18,7 @@ export function lecturerDashboard() {
         <div class="avatar lecturer-avatar">BA</div>
         <div class="profile-copy lecturer-profile">
           <h1>Veronica Sri Moertini</h1>
-          <p>Program Studi Sarjana Informatika (2024</p>
+          <p>Program Studi Sarjana Informatika (2024)</p>
           <p>Universitas Katolik Parahyangan</p>
         </div>
       </section>
